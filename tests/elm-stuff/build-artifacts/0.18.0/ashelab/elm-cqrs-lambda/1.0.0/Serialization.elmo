@@ -1,0 +1,74 @@
+var _ashelab$elm_cqrs_lambda$Serialization$httpProtocolDecoder = function (protocol) {
+	var _p0 = protocol;
+	switch (_p0) {
+		case 'HTTP':
+			return _ashelab$elm_cqrs_lambda$Model$HTTP;
+		case 'HTTPS':
+			return _ashelab$elm_cqrs_lambda$Model$HTTPS;
+		default:
+			return _ashelab$elm_cqrs_lambda$Model$OTHER_PROTOCOL(_p0);
+	}
+};
+var _ashelab$elm_cqrs_lambda$Serialization$httpProtocolEncoder = function (protocol) {
+	return _elm_lang$core$Json_Encode$string(
+		function () {
+			var _p1 = protocol;
+			switch (_p1.ctor) {
+				case 'HTTP':
+					return 'HTTP';
+				case 'HTTPS':
+					return 'HTTPS';
+				default:
+					return _p1._0;
+			}
+		}());
+};
+var _ashelab$elm_cqrs_lambda$Serialization$httpMethodDecoder = function (method) {
+	var _p2 = method;
+	switch (_p2) {
+		case 'ANY':
+			return _ashelab$elm_cqrs_lambda$Model$ANY;
+		case 'DELETE':
+			return _ashelab$elm_cqrs_lambda$Model$DELETE;
+		case 'GET':
+			return _ashelab$elm_cqrs_lambda$Model$GET;
+		case 'HEAD':
+			return _ashelab$elm_cqrs_lambda$Model$HEAD;
+		case 'OPTION':
+			return _ashelab$elm_cqrs_lambda$Model$OPTION;
+		case 'PATCH':
+			return _ashelab$elm_cqrs_lambda$Model$PATCH;
+		case 'POST':
+			return _ashelab$elm_cqrs_lambda$Model$POST;
+		case 'PUT':
+			return _ashelab$elm_cqrs_lambda$Model$PUT;
+		default:
+			return _ashelab$elm_cqrs_lambda$Model$CUSTOM_METHOD(_p2);
+	}
+};
+var _ashelab$elm_cqrs_lambda$Serialization$httpMethodEncoder = function (method) {
+	return _elm_lang$core$Json_Encode$string(
+		function () {
+			var _p3 = method;
+			switch (_p3.ctor) {
+				case 'ANY':
+					return 'ANY';
+				case 'DELETE':
+					return 'DELETE';
+				case 'GET':
+					return 'GET';
+				case 'HEAD':
+					return 'HEAD';
+				case 'OPTION':
+					return 'OPTION';
+				case 'PATCH':
+					return 'PATCH';
+				case 'POST':
+					return 'POST';
+				case 'PUT':
+					return 'PUT';
+				default:
+					return _p3._0;
+			}
+		}());
+};

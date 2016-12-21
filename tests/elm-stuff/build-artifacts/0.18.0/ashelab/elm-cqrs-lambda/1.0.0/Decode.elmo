@@ -1,0 +1,159 @@
+var _ashelab$elm_cqrs_lambda$Decode$contextDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'memoryLimitInMB',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'functionName',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'functionVersion',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'logStreamName',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'logGroupName',
+					_elm_lang$core$Json_Decode$string,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'invokeid',
+						_elm_lang$core$Json_Decode$string,
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'awsRequestId',
+							_elm_lang$core$Json_Decode$string,
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_ashelab$elm_cqrs_lambda$Model$Context))))))));
+var _ashelab$elm_cqrs_lambda$Decode$requestContextDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'apiId',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'resourcePath',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'requestId',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'stage',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'resourceId',
+					_elm_lang$core$Json_Decode$string,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'accountId',
+						_elm_lang$core$Json_Decode$string,
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_ashelab$elm_cqrs_lambda$Model$RequestContext)))))));
+var _ashelab$elm_cqrs_lambda$Decode$requestHeadersDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'if-none-match',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'connection',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'accept-language',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'accept-encoding',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'accept',
+					_elm_lang$core$Json_Decode$string,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'user-agent',
+						_elm_lang$core$Json_Decode$string,
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'upgrade-insecure-requests',
+							_elm_lang$core$Json_Decode$string,
+							A3(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+								'cache-control',
+								_elm_lang$core$Json_Decode$string,
+								A3(
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+									'host',
+									_elm_lang$core$Json_Decode$string,
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_ashelab$elm_cqrs_lambda$Model$RequestHeaders))))))))));
+var _ashelab$elm_cqrs_lambda$Decode$requestEventDecoder = A4(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+	'requestContext',
+	_elm_lang$core$Json_Decode$nullable(_ashelab$elm_cqrs_lambda$Decode$requestContextDecoder),
+	_elm_lang$core$Maybe$Nothing,
+	A4(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+		'query',
+		_elm_lang$core$Json_Decode$keyValuePairs(_elm_lang$core$Json_Decode$string),
+		{ctor: '[]'},
+		A4(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+			'path',
+			_elm_lang$core$Json_Decode$keyValuePairs(_elm_lang$core$Json_Decode$string),
+			{ctor: '[]'},
+			A4(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+				'body',
+				_elm_lang$core$Json_Decode$keyValuePairs(_elm_lang$core$Json_Decode$string),
+				{ctor: '[]'},
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'headers',
+					_ashelab$elm_cqrs_lambda$Decode$requestHeadersDecoder,
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_ashelab$elm_cqrs_lambda$Model$RequestEvent))))));
+var _ashelab$elm_cqrs_lambda$Decode$requestDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'context',
+	_ashelab$elm_cqrs_lambda$Decode$contextDecoder,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'event',
+		_ashelab$elm_cqrs_lambda$Decode$requestEventDecoder,
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_ashelab$elm_cqrs_lambda$Model$Request)));
+var _ashelab$elm_cqrs_lambda$Decode$httpProtocolDecoder = function (protocol) {
+	var _p0 = protocol;
+	switch (_p0) {
+		case 'HTTP':
+			return _ashelab$elm_cqrs_lambda$Model$HTTP;
+		case 'HTTPS':
+			return _ashelab$elm_cqrs_lambda$Model$HTTPS;
+		default:
+			return _ashelab$elm_cqrs_lambda$Model$OTHER_PROTOCOL(_p0);
+	}
+};
+var _ashelab$elm_cqrs_lambda$Decode$httpMethodDecoder = function (method) {
+	var _p1 = method;
+	switch (_p1) {
+		case 'ANY':
+			return _ashelab$elm_cqrs_lambda$Model$ANY;
+		case 'DELETE':
+			return _ashelab$elm_cqrs_lambda$Model$DELETE;
+		case 'GET':
+			return _ashelab$elm_cqrs_lambda$Model$GET;
+		case 'HEAD':
+			return _ashelab$elm_cqrs_lambda$Model$HEAD;
+		case 'OPTION':
+			return _ashelab$elm_cqrs_lambda$Model$OPTION;
+		case 'PATCH':
+			return _ashelab$elm_cqrs_lambda$Model$PATCH;
+		case 'POST':
+			return _ashelab$elm_cqrs_lambda$Model$POST;
+		case 'PUT':
+			return _ashelab$elm_cqrs_lambda$Model$PUT;
+		default:
+			return _ashelab$elm_cqrs_lambda$Model$CUSTOM_METHOD(_p1);
+	}
+};

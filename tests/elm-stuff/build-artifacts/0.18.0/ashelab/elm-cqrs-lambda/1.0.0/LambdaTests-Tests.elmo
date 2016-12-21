@@ -1,0 +1,45 @@
+var _ashelab$elm_cqrs_lambda$LambdaTests_Tests$decodeTest = function (target) {
+	return A2(
+		_elm_community$elm_test$Test$describe,
+		'should decode json',
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_community$elm_test$Test$test,
+				target.name,
+				function (_p0) {
+					var _p1 = _p0;
+					return A2(
+						_elm_community$elm_test$Expect$equal,
+						target.expected,
+						A2(_elm_lang$core$Json_Decode$decodeString, target.decoder, target.json));
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _ashelab$elm_cqrs_lambda$LambdaTests_Tests$run = function (testList) {
+	return A2(_elm_lang$core$List$map, _ashelab$elm_cqrs_lambda$LambdaTests_Tests$decodeTest, testList);
+};
+var _ashelab$elm_cqrs_lambda$LambdaTests_Tests$DecodeTest = F4(
+	function (a, b, c, d) {
+		return {name: a, decoder: b, json: c, expected: d};
+	});
+var _ashelab$elm_cqrs_lambda$LambdaTests_Tests$localRequest = {
+	ctor: '::',
+	_0: A4(
+		_ashelab$elm_cqrs_lambda$LambdaTests_Tests$DecodeTest,
+		'is able to parse a local run serverless sample',
+		_ashelab$elm_cqrs_lambda$Decode$requestDecoder,
+		_ashelab$elm_cqrs_lambda$LambdaTests_Samples$localRequest,
+		_elm_lang$core$Result$Ok(_ashelab$elm_cqrs_lambda$LambdaTests_Samples$localRequest_Expected)),
+	_1: {ctor: '[]'}
+};
+var _ashelab$elm_cqrs_lambda$LambdaTests_Tests$all = A2(
+	_elm_community$elm_test$Test$describe,
+	'Serialization Tests',
+	_elm_lang$core$List$concat(
+		{
+			ctor: '::',
+			_0: _ashelab$elm_cqrs_lambda$LambdaTests_Tests$run(_ashelab$elm_cqrs_lambda$LambdaTests_Tests$localRequest),
+			_1: {ctor: '[]'}
+		}));

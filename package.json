@@ -1,0 +1,23 @@
+{
+  "name": "elm-cqrs-lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda Library for ELM-CQRS",
+  "author": "Perry Birch <perry@ashelabs.com>",
+  "license": "Apache 2.0",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/ashelab/elm-cqrs-lambda"
+	},
+  "main": "app.js",
+  "scripts": {
+  },
+  "dependencies": {
+    "serverless-webpack": "^1.0.0-rc.2",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "elm-webpack-loader": "^4.1.0",
+    "serverless-webpack": "^1.0.0-rc.2",
+    "webpack": "^1.14.0"
+  }
+}

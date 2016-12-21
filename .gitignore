@@ -1,0 +1,12 @@
+# package directories
+/node_modules
+/jspm_packages
+
+# Elm directories
+/elm-stuff
+
+# Serverless directories
+/.serverless
+
+# Webpack directories
+/.webpack

@@ -1,0 +1,61 @@
+var _ashelab$elm_cqrs_lambda$Model$Identity = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return {cognitoIdentityPoolId: a, accountId: b, cognitoIdentityId: c, caller: d, apiKey: e, sourceIp: f, accessKey: g, cognitoAuthenticationType: h, cognitoAuthenticationProvider: i, userArn: j, userAgent: k, user: l};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _ashelab$elm_cqrs_lambda$Model$RequestContext = F6(
+	function (a, b, c, d, e, f) {
+		return {accountId: a, resourceId: b, stage: c, requestId: d, resourcePath: e, apiId: f};
+	});
+var _ashelab$elm_cqrs_lambda$Model$RequestHeaders = F9(
+	function (a, b, c, d, e, f, g, h, i) {
+		return {host: a, cacheControl: b, upgradeInsecureRequests: c, userAgent: d, accept: e, acceptEncoding: f, acceptLanguage: g, connection: h, ifNoneMatch: i};
+	});
+var _ashelab$elm_cqrs_lambda$Model$RequestEvent = F5(
+	function (a, b, c, d, e) {
+		return {headers: a, body: b, path: c, query: d, requestContext: e};
+	});
+var _ashelab$elm_cqrs_lambda$Model$Context = F7(
+	function (a, b, c, d, e, f, g) {
+		return {awsRequestId: a, invokeid: b, logGroupName: c, logStreamName: d, functionVersion: e, functionName: f, memoryLimitInMB: g};
+	});
+var _ashelab$elm_cqrs_lambda$Model$Request = F2(
+	function (a, b) {
+		return {event: a, context: b};
+	});
+var _ashelab$elm_cqrs_lambda$Model$CUSTOM_METHOD = function (a) {
+	return {ctor: 'CUSTOM_METHOD', _0: a};
+};
+var _ashelab$elm_cqrs_lambda$Model$PUT = {ctor: 'PUT'};
+var _ashelab$elm_cqrs_lambda$Model$POST = {ctor: 'POST'};
+var _ashelab$elm_cqrs_lambda$Model$PATCH = {ctor: 'PATCH'};
+var _ashelab$elm_cqrs_lambda$Model$OPTION = {ctor: 'OPTION'};
+var _ashelab$elm_cqrs_lambda$Model$HEAD = {ctor: 'HEAD'};
+var _ashelab$elm_cqrs_lambda$Model$GET = {ctor: 'GET'};
+var _ashelab$elm_cqrs_lambda$Model$DELETE = {ctor: 'DELETE'};
+var _ashelab$elm_cqrs_lambda$Model$ANY = {ctor: 'ANY'};
+var _ashelab$elm_cqrs_lambda$Model$OTHER_PROTOCOL = function (a) {
+	return {ctor: 'OTHER_PROTOCOL', _0: a};
+};
+var _ashelab$elm_cqrs_lambda$Model$HTTPS = {ctor: 'HTTPS'};
+var _ashelab$elm_cqrs_lambda$Model$HTTP = {ctor: 'HTTP'};

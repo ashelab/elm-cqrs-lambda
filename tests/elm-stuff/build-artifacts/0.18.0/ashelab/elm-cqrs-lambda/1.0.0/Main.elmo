@@ -1,0 +1,14 @@
+var _ashelab$elm_cqrs_lambda$Main$serializationTests = A2(
+	_elm_community$elm_test$Test$describe,
+	'elm-cqrs-lambda-tests',
+	{
+		ctor: '::',
+		_0: _ashelab$elm_cqrs_lambda$LambdaTests_Tests$all,
+		_1: {ctor: '[]'}
+	});
+var _ashelab$elm_cqrs_lambda$Main$emit = _elm_lang$core$Native_Platform.outgoingPort(
+	'emit',
+	function (v) {
+		return [v._0, v._1];
+	});
+var _ashelab$elm_cqrs_lambda$Main$main = A2(_rtfeldman$node_test_runner$Test_Runner_Node$run, _ashelab$elm_cqrs_lambda$Main$emit, _ashelab$elm_cqrs_lambda$Main$serializationTests)(_elm_lang$core$Json_Decode$value);
