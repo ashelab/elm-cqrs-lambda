@@ -42,34 +42,8 @@ type alias RequestContext =
   , apiId: String
   }
 
-type alias RequestHeaders =
-  { host: String
-  , cacheControl: String
-  , upgradeInsecureRequests: String
-  , userAgent: String
-  , accept: String
-  , acceptEncoding: String
-  , acceptLanguage: String
-  
-  , connection: String
-  , ifNoneMatch: String
-
-  -- , cloudFrontForwardedProto: HttpProtocol
-  -- , cloudFrontIsDesktopViewer: Bool
-  -- , cloudFrontIsMobileViewer: Bool
-  -- , cloudFrontIsSmartTVViewer: Bool
-  -- , cloudFrontIsTabletViewer: Bool
-  -- , cloudFrontViewerCountry: String
-  
-  -- , via: String
-  -- , xAmzCfId: String
-  -- , xForwardedFor: String
-  -- , xForwardedPort: Int
-  -- , xForwardedProto: HttpProtocol
-  }
-
 type alias RequestEvent body path query =
-  { headers: RequestHeaders
+  { headers: List (String, String)
   , body: List (String, body)
   , path: List (String, path)
   , query: List (String, query)

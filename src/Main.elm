@@ -5,7 +5,7 @@ import Platform exposing (..)
 --
 
 import Model exposing (..)
-import Serialization exposing (..)
+import Decode exposing (..)
 
 --
 
@@ -18,13 +18,13 @@ type Msg
   
 init : Model -> (Model, Cmd Msg)
 init data =
-  ( data, Ports.response data )
+  ( data, Ports.response (Ports.Response 200 data ) )
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
   case msg of
     Request data ->
-      ( model, Ports.response data )
+      ( model, Ports.response (Ports.Response 200 data ))
 
 subscriptions : Model -> Sub Msg
 subscriptions _ = Sub.none

@@ -6,9 +6,11 @@ import Json.Decode exposing (Decoder, decodeString, string, null)
 
 --
 
-import LambdaTests.Samples as Samples
+import LambdaTests.Dev.SimpleEmptyValidRequest as Dev_SimpleEmptyValidRequest
+import LambdaTests.Dev.EmptyValidRequest as Dev_EmptyValidRequest
+import LambdaTests.Local.EmptyValidRequest as Local_EmptyValidRequest
+
 import Decode exposing (..)
--- import LambdaTests.Stubs as Stubs
 
 import Model
 
@@ -40,17 +42,32 @@ all : Test
 all =
     describe "Serialization Tests" <|
         List.concat
-            [ run localRequest
+            [ run localRequests
+            , run devRequests
             ]
 
 
-localRequest : List (DecodeTest (Model.Request String String String))
-localRequest =
+localRequests : List (DecodeTest (Model.Request String String String))
+localRequests =
     [ DecodeTest
-        "is able to parse a local run serverless sample"
+        "is able to parse a local run serverless sample with an empty payload"
         requestDecoder
-        Samples.localRequest
-        (Ok Samples.localRequest_Expected)
+        Local_EmptyValidRequest.data
+        (Ok Local_EmptyValidRequest.expected)
+    ]
+
+devRequests : List (DecodeTest (Model.Request String String String))
+devRequests =
+    [ DecodeTest
+        "is able to parse a dev run serverless sample with a simple empty payload"
+        requestDecoder
+        Dev_SimpleEmptyValidRequest.data
+        (Ok Dev_SimpleEmptyValidRequest.expected)
+    , DecodeTest
+        "is able to parse a dev run serverless sample with an empty payload"
+        requestDecoder
+        Dev_EmptyValidRequest.data
+        (Ok Dev_EmptyValidRequest.expected)
     ]
 
 -- endpoints : List (DecodeTest Auth.Endpoint)

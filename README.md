@@ -15,6 +15,14 @@ This library is built upon the shoulders of giants:
 
 
 Initialization and Response
------
+---------------------------
 
 This library uses a combination of programWithFlags to allow initialization of the worker and a Ports subscription to provide the response.
+
+
+Resources
+---------
+
+[Decoding Complex JSON](http://folkertdev.nl/blog/elm-messy-json-value/)
+
+[Remote Data](https://github.com/bloom/remotedata)

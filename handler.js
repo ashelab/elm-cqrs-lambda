@@ -11,8 +11,8 @@ module.exports.hello = (event, context, callback) => {
   worker.ports.response.subscribe(function(data) {
     try {
       callback(null, callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(data)
+        statusCode: data.statusCode,
+        body: JSON.stringify(data.body)
       }));
     } catch(ex) {
       callback(null, callback(null, {

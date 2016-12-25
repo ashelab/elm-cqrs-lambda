@@ -4,6 +4,7 @@
 
 # Elm directories
 /elm-stuff
+tests/elm-stuff
 
 # Serverless directories
 /.serverless
